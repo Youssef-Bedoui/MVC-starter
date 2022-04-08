@@ -29,7 +29,7 @@ function Menu() {
   const handlePriceInput = (e) => {
     setpriceInput(e.target.value);
   }
-  const handleCreate = (item) => {
+  const handleCreate = (iteme) => {
     axios.post("/menu/add", { food: foodInput, price: priceInput })
       .then(response => setfoodData([...foodData, { food: foodInput, price: foodInput }]))
   }
@@ -40,7 +40,7 @@ function Menu() {
   const handleDelete = (id) => {
     console.log(id)
     axios.delete(`menu/delete/${id}`)
-      // .then((response) => { setfoodData(foodData.filter((item) => item.id !== id)) })
+      .then((response) => { setfoodData(foodData.filter((item) => item.id !== id)) })
 
   }
   //handleToggleModif
