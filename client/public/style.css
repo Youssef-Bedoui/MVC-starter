@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: rgb(199, 195, 195);
+}
+
+nav {
+    height: 100px;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Jr0qlCLahclpXR2Vc8An5JlMSetAo_SVNQ&usqp=CAU");
+    width: 100%;
+    margin: 0, 0, 0, 40px;
+    box-shadow: 5px 5px 25px 10px rgb(173, 173, 173),
+        5px 5px 25px 15px rgb(166, 160, 160),
+        5px 5px 25px 20px rgb(225, 218, 218);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#logo {
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px 60px;
+    color: rgb(230, 230, 230);
+    background-color: rgba(0, 0, 0, 0.444);
+}
+
+#inputsDiv {
+    width: 50%;
+    height: 40px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.addInput {
+    margin: 10px;
+    height: 40px;
+    font-size: 18px;
+    border-radius: 5px;
+
+}
+
+#addButton {
+    padding: 3px 10px;
+    font-size: 28px;
+
+}
+
+#content {
+    width: 60%;
+    height: 500px;
+    background-image: url("https://blog.placeit.net/wp-content/uploads/2018/04/fastfoodheader_featured.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 15px;
+    filter: grayscale(5px);
+}
+
+#dashboard {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgba(110, 110, 110, 0.55);
+    color: white;
+    margin: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+#foodList {
+    background-color: rgba(33, 36, 36, 0.368);
+    width: 100%;
+    height: 100%;
+}
+
+
+
+table th {
+    width: 250px;
+    text-align: center;
+}
+
+th {
+    font-size: large;
+    font-weight: bold;
+}
+
+td.text {
+    text-align: justify;
+    padding: 5px;
+}
+
+table table,
+table table td {
+    border: 1px solid #000;
+}
