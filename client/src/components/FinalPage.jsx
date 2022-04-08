@@ -1,20 +1,38 @@
 import React from "react";
-import FoodItem from "./foodItem.jsx";
+import axios from "axios";
 
-const FinalPage = ({ foodData, handleDelete, handleModif }) => (
-  <table>
-    <thead>
-      <th>FOOD</th>
-      <th>Price $</th>
-    </thead>
-    <tbody>
-      {foodData.map((item, index) => (
-        <FoodItem index={index} data={item} handleDelete={handleDelete} handleModif={handleModif} />
 
-      ))}
+function FinalPage({ foodData }) {
+  React.useEffect(() => {
+    axios.get("/menu/getAll")
+      .then(result => {
+        setfoodData(result.data);
+      })
+  }, []);
 
-    </tbody>
-  </table>
-);
+  return (
+    <div id="container">
+      <table id="finalMenu">
+        <thead>
+          <th class="modifTh">FOOD</th>
+          <th class="modifTh">Price (DT)</th>
+        </thead>
+        <tbody>
+          {foodData.map((item, index) => (
+            <tr key={index}>
+              <td>{item.food}</td>
+              <td>{item.price}</td>
+            </tr>
+          ))}
+
+        </tbody>
+        </table>
+        <button id="printBtn" onClick={()=>{window.print()}}>SAVE MENU</button>
+    </div>
+  )
+
+
+
+}
 
 export default FinalPage;

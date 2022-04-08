@@ -2,12 +2,10 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Lato', sans-serif;
-
 }
 
 body {
     margin: 0;
-    background-image: url("https://wallpaperaccess.com/full/1698007.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -31,6 +29,21 @@ nav {
     padding: 10px 170px;
     color: rgb(230, 230, 230);
     background-color: rgba(0, 0, 0, 0.444);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#menuContainer {
+    background-image: url("https://wallpaperaccess.com/full/1698007.jpg");
+    height: 800px;
+
+}
+
+#modifpageback {
+    background-image: url("https://wallpaperaccess.com/full/1698007.jpg");
+    height: 800px;
 }
 
 #inputsDiv {
@@ -79,8 +92,10 @@ nav {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
+    padding-bottom: 40px;
     border-radius: 15px;
     filter: grayscale(5px);
+    overflow-y: scroll;
 }
 
 #dashboard {
@@ -98,7 +113,6 @@ nav {
 
 table {
     margin: auto !important;
-
 }
 
 table th {
@@ -152,7 +166,6 @@ table table td {
 
 .wrapper {
     position: relative;
-    bottom: 1 0px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -214,22 +227,78 @@ a:hover+.icon {
     right: -25%;
 }
 
-#modifContainer{
+/* MODIF PAGE */
+#modifContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-basis: auto;
 }
-#modifFood,#modifPrice,#saveModifBtn{
+
+#modifFood,
+#modifPrice,
+#saveModifBtn {
     margin-top: 20px;
     width: 60%;
     height: 50px;
 }
-#modifFood,#modifPrice{
-    font-size: 24px;   
+
+#modifFood,
+#modifPrice {
+    font-size: 24px;
 }
-#saveModifBtn{
+
+#saveModifBtn {
     font-weight: bold;
     font-style: 35px;
+}
+
+/* FINAL PAGE */
+#container {
+    height: 700px;
+    width: 75%;
+    margin: auto !important;
+}
+
+#finalMenu {
+    background-image: url("https://i.pinimg.com/originals/2e/bf/1b/2ebf1bf756f6841cdb26fa9b83562d87.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 400px;
+    height: 100%;
+    width: 100%;
+}
+
+.modifTh {
+    font-size: 33px;
+    font-weight: bold;
+    color: rgb(35, 65, 123);
+    background-color: transparent !important;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#finalMenu td {
+    text-align: center;
+    padding: 5px;
+    font-size: 28px;
+    color: black;
+    /* padding-left: 40px; */
+    letter-spacing: 1px;
+    
+}
+
+#finalMenu table table,
+table table td {
+    border: 1px solid #000;
+}
+
+#printBtn{
+    display: block;
+    margin:0 auto;
+    padding: 10px 25px;
+    border: 2px solid white;
+    background-color: #2ecc71;
+    columns: white;
 }

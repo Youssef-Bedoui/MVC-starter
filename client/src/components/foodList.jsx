@@ -6,7 +6,7 @@ const FoodList = ({ foodData, handleDelete, handleModif }) => (
   <table>
     <thead>
       <th>Name</th>
-      <th>Price $</th>
+      <th>Price (DT)</th>
       <th>Action</th>
     </thead>
     <tbody>

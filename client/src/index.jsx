@@ -16,6 +16,8 @@ function Menu() {
   const [foodInput, setfoodInput] = React.useState("");
   const [priceInput, setpriceInput] = React.useState("");
   const [view, setview] = React.useState("menuList");
+  const [foodModif, setfoodModif] = React.useState("");
+  const [priceModif, setpriceModif] = React.useState("");
 
   React.useEffect(() => {
     axios.get("/menu/getAll")
@@ -23,14 +25,14 @@ function Menu() {
         setfoodData(result.data);
       })
   }, []);
-
+  //views
   const changeView = (view) => {
     setview(view)
   }
   const renderView = () => {
     if (view === "menuList") {
       return (
-        <div>
+        <div id="menuContainer">
           <Navbar />
           <div id='inputsDiv'>
             <Inputs handleFoodInput={handleFoodInput}
@@ -62,7 +64,7 @@ function Menu() {
     } else if
       (view === "ModifPage") {
       return (
-        <ModifPage/>
+        <ModifPage saveModif={saveModif} handleFoodModif={handleFoodModif} handlePriceInput={handlePriceModif} />
       )
     } else if
       (view === "FinalPage") {
@@ -70,7 +72,8 @@ function Menu() {
         <FinalPage foodData={foodData}
           handleModif={handleModif}
           handleFoodInput={handleFoodInput}
-          handlePriceInput={handlePriceInput} />
+          handlePriceInput={handlePriceInput}
+        />
       )
     }
   }
@@ -90,6 +93,16 @@ function Menu() {
     changeView("ModifPage")
     console.log("");
   }
+  const handleFoodModif = (e) => {
+    setfoodModif(e.target.value)
+  }
+  const handlePriceModif = (e) => {
+    setpriceModif(e.target.value)
+  }
+  const saveModif = (id) => {
+    axios.put(`/menu/modif/${id}`, { food: foodModif, price: priceModif })
+      .then(() => setview("menuList"))
+  }
   const handleDelete = (id) => {
     console.log(id)
     axios.delete(`menu/delete/${id}`)
@@ -98,8 +111,9 @@ function Menu() {
   }
   //handleSubmit
   const handleSubmit = () => {
-    changeView("FinalfPage")
+    changeView("FinalPage")
   }
+
 
   return (
     <div>{renderView("view")}</div>
