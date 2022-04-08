@@ -100,8 +100,8 @@ function Menu() {
     setpriceModif(e.target.value)
   }
   const saveModif = (id) => {
+    setview("menuList");
     axios.put(`/menu/modif/${id}`, { food: foodModif, price: priceModif })
-      .then(() => setview("menuList"))
   }
   const handleDelete = (id) => {
     console.log(id)

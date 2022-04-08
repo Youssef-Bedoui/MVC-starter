@@ -8,7 +8,7 @@ const ModifPage = ({saveModif,handleFoodModif,handlePriceModif}) => (
                 <h3 id='dashboard'>Modify</h3>
                 <input id="modifFood" type="text" placeholder="Modif Food..." onChange={()=>handleFoodModif}></input>
                 <input id="modifPrice" type="number" placeholder="Set new Price..." onChange={()=>handlePriceModif}></input>
-                <button id="saveModifBtn" onClick={() => saveModif()}>Save Change</button>
+                <button id="saveModifBtn" onClick={() => saveModif}>Save Change</button>
             </div>
 
         </div>
