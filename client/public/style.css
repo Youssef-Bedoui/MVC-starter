@@ -1,11 +1,15 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Lato', sans-serif;
+
 }
 
 body {
     margin: 0;
-    background-color: rgb(199, 195, 195);
+    background-image: url("https://wallpaperaccess.com/full/1698007.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 nav {
@@ -13,21 +17,18 @@ nav {
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2Jr0qlCLahclpXR2Vc8An5JlMSetAo_SVNQ&usqp=CAU");
     width: 100%;
     margin: 0, 0, 0, 40px;
-    box-shadow: 5px 5px 25px 10px rgb(173, 173, 173),
-        5px 5px 25px 15px rgb(166, 160, 160),
-        5px 5px 25px 20px rgb(225, 218, 218);
     display: flex;
     justify-content: center;
     text-align: center;
 }
 
 #logo {
-    font-size: 35px;
+    font-size: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
-    padding: 10px 60px;
+    padding: 10px 170px;
     color: rgb(230, 230, 230);
     background-color: rgba(0, 0, 0, 0.444);
 }
@@ -47,12 +48,26 @@ nav {
     height: 40px;
     font-size: 18px;
     border-radius: 5px;
-
+    border: 4px solid royalblue;
 }
 
 #addButton {
-    padding: 3px 10px;
-    font-size: 28px;
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    margin-left: 10px;
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(191, 181, 181);
+    color: black;
+}
+
+#addButton:hover {
+    background-color: rgb(0, 0, 0);
+    border: 3px solid rgb(191, 181, 181);
+    color: white;
+    cursor: pointer;
 
 }
 
@@ -87,7 +102,7 @@ table {
 }
 
 table th {
-    width: 250px;
+    width: 270px;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
@@ -112,4 +127,109 @@ td {
 table table,
 table table td {
     border: 1px solid #000;
+}
+
+#modifBtn,
+#deleteBtn {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+#modifBtn {
+    border: 4px solid #4CAF50;
+}
+
+#deleteBtn {
+
+    border: 4px solid #f4190e;
+}
+
+.wrapper {
+    position: relative;
+    bottom: 1 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.link_wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 42%;
+}
+
+a {
+    display: block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #333;
+    transition: all .35s;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+}
+
+.icon svg {
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #2ecc71;
+    transition: all .35s;
+}
+
+a:hover {
+    width: 200px;
+    border: 3px solid #2ecc71;
+    background: transparent;
+    color: #2ecc71;
+}
+
+a:hover+.icon {
+    border: 3px solid #2ecc71;
+    right: -25%;
+}
+
+#modifContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: auto;
+}
+#modifFood,#modifPrice,#saveModifBtn{
+    margin-top: 20px;
+    width: 60%;
+    height: 50px;
+}
+#modifFood,#modifPrice{
+    font-size: 24px;   
+}
+#saveModifBtn{
+    font-weight: bold;
+    font-style: 35px;
 }

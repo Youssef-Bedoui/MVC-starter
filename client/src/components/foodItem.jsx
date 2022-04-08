@@ -1,13 +1,13 @@
 import React from "react";
 
-const FoodItem = ({ data, handleModif, handleDelete, handleFoodInput, handlePriceInput, InputtoggleModif }) => (
+const FoodItem = ({ data, handleModif, handleDelete }) => (
   <tr>
-  {console.log(data)}
+    {console.log(data)}
     <td>{data.food}</td>
     <td>{data.price}</td>
     <td>
-      <button onClick={handleModif(data.id)}>Modify</button>
-      <button onClick={handleDelete(data.id)}>Delete</button>
+      <button id="modifBtn" onClick={() => handleModif(data.id)}>Modify</button>
+      <button id="deleteBtn" onClick={() => handleDelete(data.id)}>Delete</button>
     </td>
 
   </tr>

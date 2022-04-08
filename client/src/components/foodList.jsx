@@ -1,7 +1,7 @@
 import React from 'react';
 import FoodItem from './foodItem.jsx';
 
-const FoodList = ({ foodData, handleDelete, handleModif, InputtoggleModif }) => (
+const FoodList = ({ foodData, handleDelete, handleModif }) => (
 
   <table>
     <thead>
@@ -11,7 +11,7 @@ const FoodList = ({ foodData, handleDelete, handleModif, InputtoggleModif }) => 
     </thead>
     <tbody>
       {foodData.map((item, index) => (
-        <FoodItem index={index} data={item} handleDelete={handleDelete} handleModif={handleModif} InputtoggleModif={InputtoggleModif} />
+        <FoodItem index={index} data={item} handleDelete={handleDelete} handleModif={handleModif}/>
 
       ))}
 
