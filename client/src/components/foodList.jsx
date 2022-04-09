@@ -5,14 +5,13 @@ const FoodList = ({ foodData, handleDelete, handleModif }) => (
 
   <table>
     <thead>
-      <th>Name</th>
+      <th>Food</th>
       <th>Price (DT)</th>
       <th>Action</th>
     </thead>
     <tbody>
       {foodData.map((item, index) => (
-        <FoodItem index={index} data={item} handleDelete={handleDelete} handleModif={handleModif}/>
-
+        <FoodItem key={index} data={item} handleDelete={handleDelete} handleModif={handleModif}/>
       ))}
 
     </tbody>

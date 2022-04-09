@@ -2,7 +2,6 @@ import React from "react";
 
 const FoodItem = ({ data, handleModif, handleDelete }) => (
   <tr>
-    {console.log(data)}
     <td>{data.food}</td>
     <td>{data.price}</td>
     <td>

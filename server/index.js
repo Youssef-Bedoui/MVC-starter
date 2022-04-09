@@ -25,6 +25,16 @@ app.get('/getAll', (req, res) => {
   })
 });
 
+app.get('/getOnefood', (req, res) => {
+  items.getOne(id,(err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(result);
+    }
+  })
+});
+
 app.post("/add", (req, res) => {
   items.addItem(food, price, (err, result) => {
     console.log(req.body);
@@ -37,7 +47,7 @@ app.post("/add", (req, res) => {
 });
 
 app.put("/modif", (req, res) => {
-  items.modifItem(menuName, photo, price, id, (err, result) => {
+  items.modifItem(food, price, id, (err, result) => {
     console.log(req.body);
     if (err) {
       console.log(err);

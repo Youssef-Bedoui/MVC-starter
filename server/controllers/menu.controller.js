@@ -11,10 +11,22 @@ var getAll = (req, res) => {
         }
     });
 };
+
+var getOne = (req, res) => {
+    let id = req.params.id;
+    let query = `SELECT * FROM menu WHERE id = ? `;
+    db.query(query, [id], (err, result) => {
+        if (err) {
+            res.status(500).send(error)
+        } else {
+            res.status(200).json(result);
+        }
+    })
+}
 var addItem = (req, res) => {
     let { food, price } = req.body;
-    let query = `INSERT INTO menu SET food= ?, price = ?`;
-    db.query(query, [food, price], (err, result) => {
+    let query = `INSERT into menu SET food= ?, price = ?`;
+    db.query(query,[food, price], (err, result) => {
         if (err) {
             res.status(500).send(err)
         }
@@ -26,9 +38,9 @@ var addItem = (req, res) => {
 
 var modifItem = (req, res) => {
     let id = req.params.menuId;
-    let { name, photo, price } = req.body;
-    let query = `UPDATE menu SET name= ?, photo= ?, price = ?  WHERE id = ?`;
-    db.query(query, [name, photo, price, id], (err, result) => {
+    let { food, price } = req.body;
+    let query = `UPDATE menu SET food= ?, price = ?  WHERE id = ?`;
+    db.query(query, [food, price, id], (err, result) => {
         if (err) {
             res.status(500).send(err)
         }
@@ -53,4 +65,4 @@ var deleteItem = (req, res) => {
 
 
 
-module.exports = { getAll, addItem, modifItem, deleteItem };
+module.exports = { getAll, addItem, modifItem, deleteItem, getOne };
